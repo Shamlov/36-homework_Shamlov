@@ -39,7 +39,7 @@ class News extends PrintMachine {
         this.text = text;
     }
     print() {
-        let time = new Date()
+        let time = new Date()  // тут именно время вызова метода print
         document.write(`<section style = "font-size:${this.size}px; color: ${this.color}; font-family: ${this.famyli} ">
             <h2 style = "font-size:${this.size * 2.3}px;">${this.title}</h2>
             <br>
@@ -52,6 +52,6 @@ class News extends PrintMachine {
     }
     // пока не знаю как работать с датами. поэтому просто вставил. и еще иомент с выведением разницы. как это все обновляется . ведь метод вызовем или обновим страницу соответственно метод вызовется в настоящее время и от чего откладывать тогда это время.
 }
-
-let test2 = new News(15, 'red', 'sans-serif', 'Заголовок','#тег1 тег2 тег3', 'основной текст статьи')
+let articleText = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus quisquam ab laborum, deleniti dicta fugiat adipisci dolore debitis consequatur, veniam ratione corrupti sunt modi et voluptatum, saepe quae deserunt sit?'
+let test2 = new News(15, 'red', 'sans-serif', 'Заголовок','#тег1 тег2 тег3', articleText)  
 test2.print()
