@@ -53,5 +53,48 @@ class News extends PrintMachine {
     // пока не знаю как работать с датами. поэтому просто вставил. и еще иомент с выведением разницы. как это все обновляется . ведь метод вызовем или обновим страницу соответственно метод вызовется в настоящее время и от чего откладывать тогда это время.
 }
 let articleText = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus quisquam ab laborum, deleniti dicta fugiat adipisci dolore debitis consequatur, veniam ratione corrupti sunt modi et voluptatum, saepe quae deserunt sit?'
-let test2 = new News(15, 'red', 'sans-serif', 'Заголовок','#тег1 тег2 тег3', articleText)  
-test2.print()
+// let test2 = new News(15, 'red', 'sans-serif', 'Заголовок','#тег1 тег2 тег3', articleText)  
+// test2.print()
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Реализовать класс, описывающий новостную ленту. 
+// Класс должен содержать:
+//  ■ массив новостей;
+//  ■ свойство, которое возвращает количество новостей;
+//  ■ метод для вывода на экран всех новостей;
+//  ■ метод для добавления новости;
+//  ■ метод для удаления новости;
+//  ■ метод для сортировки новостей по дате (от последних но-
+// востей до старых);
+//  ■ метод для поиска новостей по тегу (возвращает массив 
+// новостей, в которых указан переданный в метод тег).
+// Продемонстрировать работу написанных методов.
+
+class Newsline {
+    constructor() {
+        this.newsArr = new Array();
+    }
+    showNumberNews() {  
+        return newsArr.length
+    }
+    showNewsText() {
+        this.newsArr.forEach(el => {
+            console.log(el)
+        });
+    }
+    addNewsText (text, teg) {
+        let time = new Date() 
+        this.newsArr.push({text, teg, time})
+    }
+}
+// с датами и временем сложно пока для понимания
+// соответственно сортировка по дате и времени не сделал
+// поиск новостей по тегу  не понял как раелизовать все
+// не сделам метод удаления (впринципе ничего сложного нет)
+let testNewsLine = new Newsline
+// console.log(testNewsLine)
+testNewsLine.addNewsText('Я новый текст1', 'тег 1')
+testNewsLine.addNewsText('Я новый текст2', 'тег 2')
+testNewsLine.showNewsText()
+// console.log(newsArr)
+
