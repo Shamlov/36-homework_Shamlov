@@ -86,15 +86,23 @@ class Newsline {
         let time = new Date() 
         this.newsArr.push({text, teg, time})
     }
+    tagSearch(teg) {
+        this.newsArr.forEach(function (el) {
+            if(el.teg == teg) {
+                console.log(el)
+            }
+        })
+    }
+
+    
 }
 // с датами и временем сложно пока для понимания
 // соответственно сортировка по дате и времени не сделал
-// поиск новостей по тегу  не понял как раелизовать все
-// не сделам метод удаления (впринципе ничего сложного нет)
+// не сделам метод удаления  не понял как 
 let testNewsLine = new Newsline
 // console.log(testNewsLine)
 testNewsLine.addNewsText('Я новый текст1', 'тег 1')
 testNewsLine.addNewsText('Я новый текст2', 'тег 2')
 testNewsLine.showNewsText()
 // console.log(newsArr)
-
+testNewsLine.tagSearch('тег 2')  // работает
